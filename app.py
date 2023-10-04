@@ -45,7 +45,3 @@ st.write('Use the sidebar to input passenger details, then click the "Predict" b
 
 # Load and display a ship image at the bottom
 # Display an image hosted online
-
-
-
-# You can add more content or visualization as needed
