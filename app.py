@@ -39,6 +39,8 @@ if st.button('Predict'):
     else:
         st.error('Did not survive')
 
+# Larger gap using multiple <br> tags
+st.markdown("<br><br><br>", unsafe_allow_html=True)
 # Provide information and instructions
 st.write('This is a simple Streamlit app to predict Titanic survival based on user input.')
 st.write('Use the sidebar to input passenger details, then click the "Predict" button to see the prediction.')
