@@ -3,13 +3,6 @@ import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestClassifier
 import pickle
-from PIL import Image
-
-
-# Load your trained model (best_rf_model) here
-# Replace 'best_rf_model.pkl' with the actual path to your trained model file
-# You need to save your model using joblib or pickle before loading it here
-
 
 st.title('Titanic Survival Prediction')
 
@@ -18,25 +11,22 @@ st.sidebar.header('User Input')
 pclass = st.sidebar.selectbox('Pclass (1, 2, 3)', [1, 2, 3])
 sex = st.sidebar.selectbox('Sex (0 for male, 1 for female)', [0, 1])
 age = st.sidebar.number_input('Age(1-100)', 0, 100, 25)
-sibsp = st.sidebar.number_input('SibSp(0-8)', 0, 8, 0)
-parch = st.sidebar.number_input('Parch(0-6)', 0, 6, 0)
 embarked = st.sidebar.selectbox('Embarked (0 for S, 1 for C, 2 for Q)', [0, 1, 2])
-
+totalpassengers = st.sidebar.number_input('TotalPassengers', 0, 15, 0)
 # Create a DataFrame to hold the input data
 input_data = pd.DataFrame({
     'Pclass': [pclass],
     'Sex': [sex],
     'Age': [age],
-    'SibSp': [sibsp],
-    'Parch': [parch],
-    'Embarked': [embarked]
+    'Embarked': [embarked],
+    'TotalPassengers':[totalpassengers]
 })
 
 # Create a button to make predictions
 if st.button('Predict'):
 
     # Load the pickled model
-    model_filename = 'gradient_boosting_model.pkl'
+    model_filename = 'best_rf_model.pkl'
     with open(model_filename, 'rb') as model_file:
         best_rf_model = pickle.load(model_file)
 
