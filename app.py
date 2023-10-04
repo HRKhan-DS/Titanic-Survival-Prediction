@@ -8,11 +8,11 @@ st.title('Titanic Survival Prediction')
 
 # Define input fields for user input
 st.sidebar.header('User Input')
-pclass = st.sidebar.selectbox('Pclass (1, 2, 3)', [1, 2, 3])
-sex = st.sidebar.selectbox('Sex (0 for male, 1 for female)', [0, 1])
+pclass = st.sidebar.selectbox('Passengers Ticket Class (1, 2, 3)', [1, 2, 3])
+sex = st.sidebar.selectbox('Sex (0 for Male, 1 for Female)', [0, 1])
 age = st.sidebar.number_input('Age(1-100)', 0, 100, 25)
-embarked = st.sidebar.selectbox('Embarked (0 for S, 1 for C, 2 for Q)', [0, 1, 2])
-totalpassengers = st.sidebar.number_input('TotalPassengers', 0, 15, 0)
+embarked = st.sidebar.selectbox('Passenger Boarded (0 for S, 1 for C, 2 for Q)', [0, 1, 2])
+totalpassengers = st.sidebar.number_input('Total Passengers', 1, 15, 1)
 # Create a DataFrame to hold the input data
 input_data = pd.DataFrame({
     'Pclass': [pclass],
